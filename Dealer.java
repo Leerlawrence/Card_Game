@@ -6,43 +6,47 @@ public class Dealer {
 
  public static Integer [] deck = new Integer[52];
 
-  public Dealer(){
-    
-  }
+ public Dealer(){
 
-  public void createDeck(){
+ }
+
+ public void createDeck(){
     //public Integer[] deck = new Integer[52];
-    for(int k = 0; k < deck.length; k++)
-      deck[k] = k + 1;
+  for(int k = 0; k < deck.length; k++)
+    deck[k] = k + 1;
 
-    Collections.shuffle(Arrays.asList(deck));
+  Collections.shuffle(Arrays.asList(deck));
 
-    for( int i = 0;i < deck.length; i++) {
-      System.out.print(deck[i]+ " " );
+  for( int i = 0;i < deck.length; i++) {
+   //   System.out.print(deck[i]+ " " );
 
-    }
   }
+}
 
 
-  public void dealCards(){
-    Scanner user_input = new Scanner( System.in );
-    String numPlayers;
-    System.out.print("Enter the number of players: ");
-    numPlayers = user_input.next( );
-    int result = Integer.parseInt(numPlayers);
-    int numCardsEach = Math.round(52 / result) ;
-    System.out.println(numCardsEach);
+public void dealCards(){
+  Scanner user_input = new Scanner( System.in );
+  String numPlayers;
+  String whatCard="";
+  String cardName="";
+  System.out.print("Enter the number of players: ");
+  numPlayers = user_input.next( );
+  int result = Integer.parseInt(numPlayers);
+  int numCardsEach = Math.round(52 / result) ;
+    numCardsEach = 2; //remove for full deal
+    //System.out.println(numCardsEach);
     int ctr=0;
     for(int k = 0; k < result; k++);
       ctr = ctr + 1;
     String playNum=Integer.toString(ctr)  ;   
     int cardCnt=0;
     String deckstr = ("Deck"+playNum );
-    System.out.println(deckstr);
-    System.out.println(numCardsEach);
-    
+    //System.out.println(deckstr);
+    //System.out.println(numCardsEach);
+    String suit = "";
     int cntr = 0;
     for(int i=0; i < result; i++){
+      System.out.println("==============================");
       System.out.println("Player " + (i+1) + ":-");
       System.out.println("==============================");
       
@@ -50,8 +54,8 @@ public class Dealer {
       int g;
       g=0;
       int ctr1 = 0;
-
-
+      int deckValue=0;
+      
       for(int d = 0 ;d < numCardsEach ; d++) 
 
     //    int e = d +( i * 17);
@@ -59,69 +63,211 @@ public class Dealer {
         //intStr = (cntr + 1).toString;
         // System.out.print( cntr + 1);
         // System.out.print(") ");
-ctr1=deck[cntr];
+        ctr1=deck[cntr];
         
         if(ctr1 < 14) g = 1;
         else if(ctr1 < 27) g = 2;
-          else if(ctr1 < 40) g = 3;
-            else  g = 4;
+        else if(ctr1 < 40) g = 3;
+        else  g = 4;
 
-            switch (g) {
-              case 1: {
+        switch (g) {
+          case 1: {
                // System.out.println(deck[cntr]);
-                System.out.print(deck[cntr] + "" );
-                System.out.println(" of Diamonds ♦♦♦♦");
-                
-
-                break;
-          
-              }
-              case 2: {
-                
-                
-                System.out.print((deck[cntr]-13) + "" );
-                System.out.println(" of Hearts ♥♥♥♥");
-          break;      
-                
-          
-              }
-              case 3: {
-                if (deck[cntr] == 39)
-                 System.out.print("King");
-               else if (deck[cntr] == 38)
-               System.out.print("Queen");
-             else if (deck[cntr] == 37)
-             System.out.print("Jack");
-           else if (deck[cntr] == 27)
-           System.out.print("Ace");
-               else
-                System.out.print((deck[cntr]-26) + "" );
-                System.out.println(" of Clubs ♣♣♣♣");
-                break;
-          
-              }
-              case 4: {
-                
-                System.out.print((deck[cntr]-39) + "" );
-                System.out.println(" of Spades ♠♠♠♠");
-                break;
+            //System.out.println("counter ="  +deck[cntr] );
+            if (deck[cntr] == 1)
+              //cardName="Ace";
+              {System.out.print(cardName + "" );
+          } else if (deck[cntr] == 11)
+          //cardName="Jack";
+          {System.out.print("Jack" + "" );
+        } else if (deck[cntr] == 12)
+        //cardName="Queen";
+        {System.out.print("Queen" + "" );
+      } else if (deck[cntr] == 13)
+      //cardName="King"
+      {System.out.print("King" + "" );
+    } else
+    {System.out.print(deck[cntr] + "" );}
 
 
-}}
+    System.out.println(" of Diamonds ♦♦♦♦");
+    if (deck[cntr] ==1)
+    {
+      deckValue= deckValue+11;
+    }else if (deck[cntr] < 9){
+      deckValue= deckValue+deck[cntr]; 
+    } else {
+      deckValue= deckValue+10;}
+whatCard = Integer.toString(deck[cntr]); 
+suit="♦";
+//Cards("Diamonds", deck[cntr]);
+      break;
+
+    }
+    case 2: {
+       if (deck[cntr] == 14)
+      {System.out.print("Ace" + "" );
+    } else if (deck[cntr] == 24)
+    {System.out.print("Jack" + "" );}
+    else if (deck[cntr] == 25)
+      {System.out.print("Queen" + "" );}
+    else if (deck[cntr] == 26)
+      {System.out.print("King" + "" );}
+    else
+      {System.out.print(deck[cntr]-13 + "" );}
+
+//whatCard=(deck[cntr]);
+    System.out.println(" of Hearts ♥♥♥♥");
+          // if (deck[cntr] ==14)
+          // {
+          //   deckValue= deckValue+11;
+          //   }else if (deck[cntr] < 23);
+          //   {deckValue= deckValue+(deck[cntr]-13); 
+          //   } else 
+          //   {deckValue= deckValue + 10;}
+    if (deck[cntr] ==14)
+    {
+      deckValue= deckValue + 11;
+    }else if (deck[cntr] < 23){
+      deckValue= deckValue+deck[cntr]-13; 
+    } else {
+      deckValue= deckValue+10;}
 
 
-       
-       
-       cntr = cntr + 1;
-     }
-       System.out.println("");
 
-       System.out.println("==============================");
 
-     }
+            // System.out.print((deck[cntr]-13) + "" );
+            // System.out.println(" of Hearts ♥♥♥♥");
+
+            // deckValue= deckValue+deck[cntr]-13;
+      //whatCard = Integer.toString(deck[cntr]); 
+      whatCard =  Integer.toString(deck[cntr]%13) ; 
+      if (whatCard == "0"){
+        whatCard = "King";}
+      suit="♥";
+
+      break;      
+
+      
+    }
+    case 3: {
+
+     if (deck[cntr] == 27)
+       {System.out.print("Ace" + "" );
+   } else if (deck[cntr] == 37)
+   {System.out.print("Jack" + "" );}
+   else if (deck[cntr] == 38)
+    {System.out.print("Queen" + "" );}
+  else if (deck[cntr] == 39)
+    {System.out.print("King" + "" );}
+  else
+    {System.out.print(deck[cntr]-26 + "" );}
+
+
+  System.out.println(" of Clubs ♣♣♣♣");
+
+  if (deck[cntr] < 36){
+    deckValue= deckValue+(deck[cntr]-26); 
+  } else {
+    deckValue= deckValue + 10;}
+
+
+            // System.out.print((deck[cntr]-26) + "" );
+            // System.out.println(" of Clubs ♣♣♣♣");
+            // deckValue= deckValue+deck[cntr]-26;
+
+
+
+  //    whatCard = Integer.toString(deck[cntr]); 
+    whatCard =  Integer.toString(deck[cntr]%13) ; 
+    if (whatCard == "0"){
+      whatCard = "King";}
+        
+
+
+suit="♣";
+ System.out.println(" ------");
+ System.out.println("|" + whatCard + suit+"   |");
+ //System.out.println("|  " + suit + "|");
+ System.out.println("|     " + " " +"|");
+ System.out.println("|     " + " " +"|");
+ System.out.println(" ------");
+
+
+
+    break;
+
   }
+  case 4: {
+    if (deck[cntr] == 40)
+      {System.out.print("Ace" + "" );
+  } else if (deck[cntr] == 50)
+  {System.out.print("Jack" + "" );
+}else if (deck[cntr] == 51)
+{System.out.print("Queen" + "" );
+}else if (deck[cntr] == 52)
+{System.out.print("King" + "" );
+}else
+{System.out.print(deck[cntr]-39 + "" );}
 
 
+System.out.println(" of Spades ♠♠♠♠");
+
+if (deck[cntr] < 50){
+  deckValue= deckValue+(deck[cntr]-39); 
+} else {
+  deckValue= deckValue + 10;}
+
+//whatCardVal= (deck[cntr] mod 13);
+  //whatCard = Integer.deck[cntr]%13
+  //whatCard = Integer.toString(deck[cntr]%13); 
+  whatCard =  Integer.toString(deck[cntr]%13) ; 
+  if (whatCard == "0"){
+    whatCard = "King";}
+suit="♠";
+
+            // System.out.print((deck[cntr]-39) + "" );
+            // System.out.println(" of Spades ♠♠♠♠");
+            // deckValue= deckValue+deck[cntr]-39;
+// whatCard= whatCard;
+int stringLen = whatCard.length();
+if (stringLen == 1){
+ whatCard = " " + whatCard;
+}
+
+System.out.println(" ------");
+System.out.println("|" + whatCard + suit+"   |");
+//System.out.println("|  " + suit + "|");
+System.out.println("|     " + " " +"|");
+System.out.println("|     " + " " +"|");
+System.out.println(" ------");
+
+
+
+  break;
+
+
+
+}
+}
+
+
+
+
+cntr = cntr + 1;
+}
+System.out.println("");
+System.out.println("Hand = "+ deckValue);
+System.out.println("==============================");
+
+}
+
+
+}
+
+//System.out.println("Hand = "+ deckValue);
+//System.out.println("==============================");
+//System.out.println("=====");
 
 }   //end of class
 
@@ -129,84 +275,5 @@ ctr1=deck[cntr];
 
 
 
-// Card temp;
 
-    // for ( int i = deck.length-1; i > 0; i-- ) {
-    //     int rand = (int)(Math.random()*(i+1));
-    //     int temp = deck[i];
-    //     deck[i] = deck[rand];
-    //       deck[rand] = temp;
-    //       System.out.println (temp);
-
-
-    // }
-
-    // Random rnd = new Random();
-    // for (int i = deck.length - 1; i > 0; i--)
-    // {
-    //   int index = rnd.nextInt(i + 1);
-    //   // Simple swap
-    //   int a = deck[index];
-    //   deck[index] = deck[i];
-    //   deck[i] = a;
-    //   System.out.println (deck[index]);
-    // }
-
-
-
-     // If running on Java 6 or older, use `new Random()` on RHS here
-      //   Random roond = ThreadLocalRandom.current();
-      //   for (int i = deck.length - 1; i > 0; i--)
-      //   {
-      //     int index = roond.nextInt(i + 1);
-      //     // Simple swap
-      //     int a = deck[index];
-      //     deck[index] = deck[i];
-      //     deck[i] = a;
-      //     System.out.println (deck[index]);
-      //   }
-      // }
-
-
-
-
-
-
-// public void shuffle() {
-//         for ( int i = deck.length-1; i > 0; i-- ) {
-//             int rand = (int)(Math.random()*(i+1));
-//             Card temp = deck[i];
-//             deck[i] = deck[rand];
-//             deck[rand] = temp;
-//         }
-
-//     }    
-
-
-
-
-
-
-
-
-
-
-
-  //  get numOfPlayers
-  //  get numberperdeck = integer of divide 52/numplayers
-
-
-
-  //  for i = 1 to numOfPlayers
-  //   for j = 1 to to nummerperdeck
-
-  //     add j to i array somewhere
-
-  //   j = j +1
-  //   next  
-  //   i = i +1
-  //   next
-
-
-  // }
 
