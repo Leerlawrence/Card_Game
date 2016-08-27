@@ -1,5 +1,18 @@
 // Card temp;
 
+// public void createLogo(){
+// System.output.println("PPPPPP  OOOOOOO  NN     NN TTTTTTTT OOOOOOO OOOOOOO NN     NN");
+// System.output.println("PP   PP OOOOOOO  NNN    NN    TT    OOOOOOO OOOOOOO NNN    NN");
+// System.output.println("PP   PP OO   OO  NN N   NN    TT    OO   OO OO   OO NN N   NN");
+// System.output.println("PPPPPP  OO   OO  NN  N  NN    TT    OO   OO OO   OO NN  N  NN");
+// System.output.println("PP      OO   OO  NN   N NN    TT    OO   OO OO   OO NN   N NN");
+// System.output.println("PP      OOOOOOO  NN    NNN    TT    OOOOOOO OOOOOOO NN    NNN");
+// System.output.println("PP      OOOOOOO  NN     NN    TT    OOOOOOO OOOOOOO NN     NN");
+// }
+
+
+
+
     // for ( int i = deck.length-1; i > 0; i-- ) {
     //     int rand = (int)(Math.random()*(i+1));
     //     int temp = deck[i];
