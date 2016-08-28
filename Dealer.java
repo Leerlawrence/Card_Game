@@ -37,15 +37,24 @@ public void dealCards(){
   Integer dealerDeckValue =0;
   int ddv = 0;
   int dv = 0;
-  System.out.print("             Enter the number of players (excluding the dealer): ");
+  System.out.print("Enter the number of players excluding the Dealer (Enter defaults to 1): ");
   //numPlayers = user_input.next( );
   System.out.println("");
-  numPlayers = scanner.nextLine();
-  System.out.println("             Press ENTER key to deal cards");
+  
+  numPlayers = scanner.nextLine(); 
+
+  if (numPlayers.isEmpty()) {
+        // Display string length.
+numPlayers = "1";}
+
+  System.out.print(numPlayers +" player(s) ready to take on the house - good luck (you may need it!). ");
+  
+  System.out.println("Press ENTER key to deal cards");
   String sentence = scanner.nextLine();
   //System.out.println("Dealer "  + ":");
 
   int result = Integer.parseInt(numPlayers)+1;
+  
   int numCardsEach = Math.round(52 / result) ;
     numCardsEach = 3; //remove for full deal
     //System.out.println(numCardsEach);
@@ -64,7 +73,7 @@ public void dealCards(){
       deckValue=0;
 
 
-//string sentence = Scanner.nextLine();
+//Print the dealers details to terminal
 
       System.out.println("==============================");
       
@@ -78,24 +87,21 @@ public void dealCards(){
 
       System.out.println("==============================");
       
-    //System.out.println("Card is: " + deck[i]);
-      int g;
+     int g;
       g=0;
       int ctr1 = 0;
-      //int deckValue=0;
       
+
+      //deal out the correct number of cards
       for(int d = 0 ;d < numCardsEach ; d++) 
 
-    //    int e = d +( i * 17);
       {
         if (deckValue > 14)
          {break;} 
 
-        //intStr = (cntr + 1).toString;
-        // System.out.print( cntr + 1);
-        // System.out.print(") ");
        ctr1=deck[cntr];
 
+//get the correct suit
        if(ctr1 < 14) g = 1;
        else if(ctr1 < 27) g = 2;
        else if(ctr1 < 40) g = 3;
@@ -103,8 +109,7 @@ public void dealCards(){
 
        switch (g) {
         case 1: {
-               // System.out.println(deck[cntr]);
-            //System.out.println("counter ="  +deck[cntr] );
+
           System.out.print("♦♦♦♦ ");
           if (deck[cntr] == 1)
             {System.out.print("Ace" + "" );
@@ -326,10 +331,11 @@ if (deckValue > 21 ){
 //System.out.println(deckValue-dealerDeckValue);
 //System.out.println(winString);
       System.out.println("==============================");
-      System.out.println("");
-      System.out.println("");
+      // System.out.println("");
+      // System.out.println("");
     }
 
+    System.out.println("Press Enter to play again ~ CTL-C to quit");
   }
 
 // else if (deckValue - dealerDeckValue == 0){
