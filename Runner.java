@@ -36,15 +36,15 @@ class Runner{
 public static void createLogo(){
  System.out.println("\r\r\r\r\r\r\r\r\r");
  
- System.out.println("                ===================================================================");
- System.out.println("                ♣♣♣♣♣♣   ♥♥♥♥♥♥♥   ♠     ♠  ♦♦♦♦♦♦♦  ♠♠♠♠♠♠♠  ♥♥♥♥♥♥♥  ♠     ♠");
- System.out.println("                ♣     ♣  ♥     ♥   ♠♠    ♠     ♦     ♠     ♠  ♥     ♥  ♠♠    ♠");
- System.out.println("                ♣     ♣  ♥     ♥   ♠ ♠   ♠     ♦     ♠     ♠  ♥     ♥  ♠ ♠   ♠");
- System.out.println("                ♣♣♣♣♣♣   ♥     ♥   ♠  ♠  ♠     ♦     ♠     ♠  ♥     ♥  ♠  ♠  ♠");
- System.out.println("                ♣        ♥     ♥   ♠   ♠ ♠     ♦     ♠     ♠  ♥     ♥  ♠   ♠ ♠");
- System.out.println("                ♣        ♥     ♥   ♠    ♠♠     ♦     ♠     ♠  ♥     ♥  ♠    ♠♠");
- System.out.println("                ♣        ♥♥♥♥♥♥♥   ♠     ♠     ♦     ♠♠♠♠♠♠♠  ♥♥♥♥♥♥♥  ♠     ♠");
- System.out.println("                ==============================================================");
+ System.out.println("     ===============================================================");
+ System.out.println("      ♣♣♣♣♣♣   ♥♥♥♥♥♥♥   ♠     ♠  ♦♦♦♦♦♦♦  ♠♠♠♠♠♠♠  ♥♥♥♥♥♥♥  ♠     ♠");
+ System.out.println("      ♣     ♣  ♥     ♥   ♠♠    ♠     ♦     ♠     ♠  ♥     ♥  ♠♠    ♠");
+ System.out.println("      ♣     ♣  ♥     ♥   ♠ ♠   ♠     ♦     ♠     ♠  ♥     ♥  ♠ ♠   ♠");
+ System.out.println("      ♣♣♣♣♣♣   ♥     ♥   ♠  ♠  ♠     ♦     ♠     ♠  ♥     ♥  ♠  ♠  ♠");
+ System.out.println("      ♣        ♥     ♥   ♠   ♠ ♠     ♦     ♠     ♠  ♥     ♥  ♠   ♠ ♠");
+ System.out.println("      ♣        ♥     ♥   ♠    ♠♠     ♦     ♠     ♠  ♥     ♥  ♠    ♠♠");
+ System.out.println("      ♣        ♥♥♥♥♥♥♥   ♠     ♠     ♦     ♠♠♠♠♠♠♠  ♥♥♥♥♥♥♥  ♠     ♠");
+ System.out.println("      ==============================================================");
  
 }
 

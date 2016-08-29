@@ -25,7 +25,6 @@ public class Dealer {
 }
 
 
-
 public void dealCards(){
   Scanner scanner = new Scanner(System.in);
   //Scanner user_input = new Scanner( System.in );
@@ -37,25 +36,25 @@ public void dealCards(){
   Integer dealerDeckValue =0;
   int ddv = 0;
   int dv = 0;
-  System.out.print("Enter the number of players excluding the Dealer (Enter defaults to 1): ");
+  System.out.println("Enter the number of players (Max 15) excluding the Dealer (Enter defaults to 1): ");
   //numPlayers = user_input.next( );
-  System.out.println("");
+  System.out.print("");
   
   numPlayers = scanner.nextLine(); 
 
   if (numPlayers.isEmpty()) {
         // Display string length.
-numPlayers = "1";}
-
-  System.out.print(numPlayers +" player(s) ready to take on the house - good luck (you may need it!). ");
-  
-  System.out.println("Press ENTER key to deal cards");
-  String sentence = scanner.nextLine();
+    numPlayers = "1";}
+    System.out.println("");
+    System.out.println(numPlayers +" player(s) ready to take on the house - good luck (you may need it!). ");
+    System.out.print("");
+    System.out.println("Press ENTER key to deal cards");
+    String sentence = scanner.nextLine();
   //System.out.println("Dealer "  + ":");
 
-  int result = Integer.parseInt(numPlayers)+1;
-  
-  int numCardsEach = Math.round(52 / result) ;
+    int result = Integer.parseInt(numPlayers)+1;
+    
+    int numCardsEach = Math.round(52 / result) ;
     numCardsEach = 3; //remove for full deal
     //System.out.println(numCardsEach);
     int ctr=0;
@@ -75,19 +74,19 @@ numPlayers = "1";}
 
 //Print the dealers details to terminal
 
-      System.out.println("==============================");
+      System.out.println("  =======================");
       
       if (i == 0) 
-        System.out.println("Dealer "  + ":");
+        System.out.println("  Dealer "  + ":");
 
 
       else
-        System.out.println("         Player " + (i) + ":");
+        System.out.println("  Player " + (i) + ":");
 
 
-      System.out.println("==============================");
+      System.out.println("  =======================");
       
-     int g;
+      int g;
       g=0;
       int ctr1 = 0;
       
@@ -110,25 +109,21 @@ numPlayers = "1";}
        switch (g) {
         case 1: {
 
-          System.out.print("♦♦♦♦ ");
+          System.out.print("  ♦♦♦♦ ");
           if (deck[cntr] == 1)
-            {System.out.print("Ace" + "" );
+            {System.out.print("  Ace" + "" );
 
-         //   } else if (deck[cntr] == 24)
-//   {System.out.print(cardName + "" );
         } else if (deck[cntr] == 11)
           //cardName="Jack";
-        {System.out.print("Jack" + "" );
+        {System.out.print("  Jack" + "" );
       } else if (deck[cntr] == 12)
         //cardName="Queen";
-      {System.out.print("Queen" + "" );
+      {System.out.print("  Queen" + "" );
     } else if (deck[cntr] == 13)
       //cardName="King"
-    {System.out.print("King" + "" );
+    {System.out.print("  King" + "" );
   } else
-  {System.out.print(deck[cntr] + "" );}
-
-    //{System.out.print(deck[cntr] + "");}
+  {System.out.print("  " + deck[cntr] + "" );}
 
   System.out.println(" of Diamonds");
   if (deck[cntr] ==1)
@@ -141,37 +136,27 @@ numPlayers = "1";}
     whatCard = Integer.toString(deck[cntr]); 
     suit="♦";
 
-
-//System.out.println(cntr);
-//Cards("Diamonds", deck[cntr]);
     break;
 
   }
   case 2: {
 
-
-
-    System.out.print("♥♥♥♥ ");
+    System.out.print("  ♥♥♥♥ ");
     if (deck[cntr] == 14)
-      {System.out.print("Ace" + "" );
+      {System.out.print("  🂱" );
   } else if (deck[cntr] == 24)
-  {System.out.print("Jack" + "" );}
+  {System.out.print("  🂻" );}
   else if (deck[cntr] == 25)
-    {System.out.print("Queen" + "" );}
+    {System.out.print("  🂽" );}
   else if (deck[cntr] == 26)
-    {System.out.print("King" + "" );}
+    {System.out.print("  🂼" );}
   else
-    {System.out.print(deck[cntr]-13 + "" );}
+    {System.out.print("  " + (deck[cntr]-13) + "" );}
+  // String[] deckVar = {🂱,🂲,🂳,🂴,🂵,🂶,🂷,🂸,🂹,🂺,🂻,🂽,🂾};
+  // System.out.print("  " + (deckVar(deck[cntr]-13)) + "" );}
+  
 
-//whatCard=(deck[cntr]);
   System.out.println(" of Hearts");
-          // if (deck[cntr] ==14)
-          // {
-          //   deckValue= deckValue+11;
-          //   }else if (deck[cntr] < 23);
-          //   {deckValue= deckValue+(deck[cntr]-13); 
-          //   } else 
-          //   {deckValue= deckValue + 10;}
   if (deck[cntr] ==14)
   {
     deckValue= deckValue + 11;
@@ -180,35 +165,26 @@ numPlayers = "1";}
   } else {
     deckValue= deckValue+10;}
 
-
-
-
-            // System.out.print((deck[cntr]-13) + "" );
-            // System.out.println(" of Hearts ♥♥♥♥");
-
-            // deckValue= deckValue+deck[cntr]-13;
-      //whatCard = Integer.toString(deck[cntr]); 
     whatCard =  Integer.toString(deck[cntr]%13) ; 
     if (whatCard == "0"){
-      whatCard = "King";}
+      whatCard = "  King";}
       suit="♥";
 
-      break;      
-
-      
+      break;   
     }
+
     case 3: {
-      System.out.print("♣♣♣♣ ");
+      System.out.print("  ♣♣♣♣ ");
       if (deck[cntr] == 27)
-       {System.out.print("Ace" + "" );
+       {System.out.print("  Ace" + "" );
    } else if (deck[cntr] == 37)
-   {System.out.print("Jack" + "" );}
+   {System.out.print("  Jack" + "" );}
    else if (deck[cntr] == 38)
-    {System.out.print("Queen" + "" );}
+    {System.out.print("  Queen" + "" );}
   else if (deck[cntr] == 39)
-    {System.out.print("King" + "" );}
+    {System.out.print("  King" + "" );}
   else
-    {System.out.print(deck[cntr]-26 + "" );}
+    {System.out.print("  " + (deck[cntr]-26) + "" );}
 
 
   System.out.println(" of Clubs");
@@ -217,46 +193,29 @@ numPlayers = "1";}
     deckValue= deckValue+(deck[cntr]-26); 
   } else {
     deckValue= deckValue + 10;}
-
-
-            // System.out.print((deck[cntr]-26) + "" );
-            // System.out.println(" of Clubs ♣♣♣♣");
-            // deckValue= deckValue+deck[cntr]-26;
-
-
-
-  //    whatCard = Integer.toString(deck[cntr]); 
+    
     whatCard =  Integer.toString(deck[cntr]%13) ; 
     if (whatCard == "0"){
-      whatCard = "King";}
-
-
+      whatCard = "  King";}
 
       suit="♣";
- // System.out.println(" ------");
- // System.out.println("|" + whatCard + suit+"   |");
- // //System.out.println("|  " + suit + "|");
- // System.out.println("|     " + " " +"|");
- // System.out.println("|     " + " " +"|");
- // System.out.println(" ------");
-
-
 
       break;
 
     }
     case 4: {
-      System.out.print("♠♠♠♠ ");
+      System.out.print("  ♠♠♠♠ ");
       if (deck[cntr] == 40)
-        {System.out.print("Ace" + "" );
+        {System.out.print("  Ace" + "🂡" );
     } else if (deck[cntr] == 50)
-    {System.out.print("Jack" + "" );
+    {System.out.print("  Jack" + " 🂫" );
+    // 🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂬🂭🂮
   }else if (deck[cntr] == 51)
-  {System.out.print("Queen" + "" );
+  {System.out.print("  Queen" + " 🂭" );
 }else if (deck[cntr] == 52)
-{System.out.print("King" + "" );
+{System.out.print("  King" + "🂮" );
 }else
-{System.out.print(deck[cntr]-39 + "" );}
+{System.out.print("  " + (deck[cntr]-39) + "" );}
 
 
 System.out.println(" of Spades");
@@ -269,85 +228,46 @@ if (deck[cntr] < 50){
 
   suit="♠";
 
-            // System.out.print((deck[cntr]-39) + "" );
-            // System.out.println(" of Spades ♠♠♠♠");
-            // deckValue= deckValue+deck[cntr]-39;
-// whatCard= whatCard;
   int stringLen = whatCard.length();
   if (stringLen == 1){
    whatCard = " " + whatCard;
  }
-
-
  break;
 
-
-
 }
 }
-
-
-
-
 cntr = cntr + 1;
 }
 
 if (i == 0) 
 {
   dealerDeckValue = deckValue;
- // System.out.println("set " + dealerDeckValue);
 }   
-
-//    if (i > 0) {
-//      ddv = deckValue;
-// }
-
-
- //    dv = Integer.parseInt(deckValue);
-
- //     if (dv > ddv); 
- //     System.out.println("Beat dealer");
- // System.out.println(dealerDeckValue);
- // }
 
 
 System.out.println("");
-System.out.println("Value of Hand = " + deckValue);
+System.out.println("  Value of Hand = " + deckValue);
 System.out.println("");
 
 if (deckValue > 21 ){
-  System.out.println("BUSTED!");
+  if (i != 0) System.out.println("  YOU BUST!");
+  if (i == 0) {System.out.println("  DEALER BUSTS!");}
   dealerDeckValue = 0;}
-    else if (dealerDeckValue - deckValue > 0 ){
-      System.out.println("YOU LOST -SORRY!");} 
-      else if (deckValue - dealerDeckValue > 0){
-        System.out.println("WINNER!");}
-        else
-          {System.out.println("DEALER WINS DRAW!");}
-       // else if (deckValue - dealerDeckValue == 0){
-       //   System.out.println("DEALER WINS A DRAW!");}  
-     
-
-//System.out.println(deckValue-dealerDeckValue);
-//System.out.println(winString);
-      System.out.println("==============================");
-      // System.out.println("");
-      // System.out.println("");
+  else if (dealerDeckValue - deckValue > 0 ){
+    System.out.println("  YOU LOST!");} 
+    else if (deckValue - dealerDeckValue > 0){
+      System.out.println("  WINNER!");}
+      else
+        if (i != 0) {System.out.println("  DEALER WINS DRAW!");}
+      System.out.println("  =======================");
+      //System.out.println("_______________________");
     }
 
-    System.out.println("Press Enter to play again ~ CTL-C to quit");
+    System.out.print("  Press Enter to play again ~ CTL-C to quit");
   }
 
-// else if (deckValue - dealerDeckValue == 0){
-// if (cntr >0){ System.out.println("DEALER WINS DRAW!"); }} 
-
-
-//System.out.println("Hand = "+ deckValue);
-//System.out.println("==============================");
-//System.out.println("=====");
 
 }   //end of class
-
 
 
 
